@@ -1,0 +1,16 @@
+{% extends "student/base.html" %}
+
+{% block content %}
+    <div class="card" style="width: 20rem;">
+    <img src="{{ student.image.url }}" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{ student.id }}: {{student.firstname}} {{ student.lastname }} </h5>
+        <ul class="card-text">
+                <li><strong>Reg No:</strong> {{ student.student_number }}</li>
+                <li><strong>Email :</strong> {{ student.email }}</li>
+                <li><strong>Program:</strong> {{ student.program }}</li>
+        </ul>
+        <a href="{% url 'index' %}" class="btn btn-primary">All Students</a>
+    </div>
+    </div>
+{% endblock content %}

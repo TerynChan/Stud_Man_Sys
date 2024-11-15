@@ -1,0 +1,50 @@
+{% extends "student/base.html" %}
+
+{% block content %}
+
+  {% include "student/hero_section.html" %}
+
+      <br>
+      <table  class="table table-secondary table-striped rounded-3 table-hover" 
+              style="width: 98%; margin: auto; border-radius: 6px; overflow: hidden;">
+
+        <thead>
+          <tr>
+            <th scope="col"  style="background-color: rgb(67, 192, 67);">#</th>
+            <th scope="col"  style="background-color: rgb(67, 192, 67);">Student ID</th>
+            <th scope="col"  style="background-color: rgb(67, 192, 67);">Face</th>
+            <th scope="col"  style="background-color: rgb(67, 192, 67);">Name</th>
+            <th scope="col"  style="background-color: rgb(67, 192, 67);">Surname</th>
+            <th scope="col"  style="background-color: rgb(67, 192, 67);">Email</th>      
+            <th scope="col"  style="background-color: rgb(67, 192, 67);">Program</th>
+            <th scope="col"  style="background-color: rgb(67, 192, 67);">Action</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {% for student in students%}
+                <tr>
+                      <td>{{ student.id }}</td>
+                      <td>{{ student.student_number }}</td>
+                      <td> <img src="{{ student.image.url }}" alt="Null" width="40px"> </td>
+                      <td>{{ student.firstname }}</td>
+                      <td>{{ student.lastname }}</td>
+                      <td>{{ student.email }}</td>
+                      <td>{{ student.program }}</td>
+                      <td >
+                        <div class="d-flex justify-content-around " style="padding-top: 6px;">
+                          <a href="{% url 'view_student' student.id %}"> <i class="fa-solid fa-circle-info fa-lg"   style="color:rgb(67, 192, 67);"></i> </a>
+                          <a href="{% url 'edit_student' student.id %}"> <i class="fa-solid fa-user-pen fa-lg"      style="color:rgb(25, 106, 255);"></i> </a>
+                          <a href="{% url 'delete_student' student.id %}"> <i class="fa-solid fa-trash-can fa-lg"   style="color:rgb(255, 25, 25);"></i> </a>
+                        </div>
+                        
+                      </td>
+                  </tr> 
+          {% endfor%}
+        </tbody>
+      </table>
+
+
+{% endblock content %}
+
+   

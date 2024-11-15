@@ -1,0 +1,17 @@
+
+<section    class="p-4 my-2 bg-light rounded-3" id="hero"
+            style="width: 99%; margin: auto;"> 
+
+        <h1 style="color: white;">Welcome {{ username }}</h1>
+        <br>
+        <p style="color: white;">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum labore excepturi voluptatibus nam, dignissimos hic. Fugit ea animi, commodi eius harum, molestiae nobis reprehenderit, repellendus cupiditate nam quisquam perferendis dolorum!
+        </p>
+        <br> 
+        <a href="{% url 'add_student' %}">
+            <button class="btn btn-success btn-lg" style="position: center; align-self: center;">
+                <i class="fa-solid fa-user-plus"></i>
+                Add Student
+            </button>
+        </a>
+    </section>
